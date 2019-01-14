@@ -75,8 +75,10 @@ class FFStream:
 	"""
 	def __init__(self,datalines):
 		for a in datalines:
-			(key,val)=a.strip().split('=')
-			self.__dict__[key]=val
+            		split_result = a.strip().split('=')
+            		if len(split_result) == 2:
+                		(key, val) = split_result
+                		self.__dict__[key] = val
 
 	def isAudio(self):
 		"""
